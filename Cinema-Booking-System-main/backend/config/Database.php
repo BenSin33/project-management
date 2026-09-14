@@ -16,6 +16,15 @@ class Database
 
     private function __construct()
     {
+        $this->host = getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? $this->host);
+        $this->db_name = getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? $this->db_name);
+        $this->username = getenv('DB_USER') ?: (getenv('DB_USERNAME') ?: ($_ENV['DB_USER'] ?? ($_ENV['DB_USERNAME'] ?? $this->username)));
+        $envPassword = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : ($_ENV['DB_PASSWORD'] ?? null);
+        if ($envPassword !== null) {
+            $this->password = $envPassword;
+        }
+        $this->charset = getenv('DB_CHARSET') ?: ($_ENV['DB_CHARSET'] ?? $this->charset);
+
         try {
             $dsn = "mysql:host={$this->host};dbname={$this->db_name};charset={$this->charset}";
             $options = [
