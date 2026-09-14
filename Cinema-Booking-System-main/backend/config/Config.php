@@ -48,6 +48,10 @@ class Config
 
     public static function init()
     {
+        self::$jwt_secret = getenv('JWT_SECRET') ?: ($_ENV['JWT_SECRET'] ?? self::$jwt_secret);
+        self::$app_name = getenv('APP_NAME') ?: ($_ENV['APP_NAME'] ?? self::$app_name);
+        self::$timezone = getenv('TIMEZONE') ?: ($_ENV['TIMEZONE'] ?? self::$timezone);
+
         date_default_timezone_set(self::$timezone);
 
         // Create upload directory if not exists

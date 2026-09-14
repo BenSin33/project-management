@@ -1,0 +1,78 @@
+# ==========================================
+# Root .gitignore for Cinema Booking Project
+# ==========================================
+
+# --- Environment & Secret Variables ---
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.local
+!.env.example
+!**/.env.example
+
+# --- Node / Frontend Dependencies & Build ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+dist/
+dist-ssr/
+build/
+.cache/
+.vite/
+.eslintcache
+*.tsbuildinfo
+
+# --- Testing & Coverage ---
+coverage/
+.nyc_output/
+.vitest/
+.vitest-cache/
+
+# --- PHP & Composer ---
+vendor/
+composer.phar
+debug_index_hit.txt
+debug_router.txt
+*.log
+error_log
+
+# --- Backend Uploads & Runtime Files ---
+**/backend/uploads/*
+!**/backend/uploads/.gitkeep
+!**/backend/uploads/verification_codes.json
+
+# --- Operating System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# --- IDE & Editor Files ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swo
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# --- Temporary & Backup Files ---
+*.tmp
+*.temp
+*.bak
+*.old

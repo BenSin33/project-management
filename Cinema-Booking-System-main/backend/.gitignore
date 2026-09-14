@@ -1,13 +1,19 @@
 # Environment files
 .env
+.env.*
+.env.local
+!.env.example
 
 # Upload files
 uploads/*
 !uploads/.gitkeep
 !uploads/verification_codes.json
 
-# PHP
+# PHP & Logs
 *.log
+error_log
+debug_index_hit.txt
+debug_router.txt
 .DS_Store
 Thumbs.db
 
