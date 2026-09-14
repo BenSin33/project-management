@@ -118,6 +118,25 @@ Mở một cửa sổ Terminal mới:
 
 ---
 
+### Bước 2.5: Khởi động Python AI Service (Dành cho Chatbox AI)
+Khi làm việc với tính năng trợ lý ảo Chatbox (DEV 3), mở một terminal mới và chạy:
+```powershell
+cd "Cinema-Booking-System-main/ai-service"
+
+# 1. Tạo môi trường ảo (lần đầu tiên)
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# 2. Cài đặt các thư viện Python miễn phí
+pip install -r requirements.txt
+
+# 3. Khởi động FastAPI server tại cổng 8001
+uvicorn main:app --reload --port 8001
+```
+- API Docs tự động (Swagger UI): [http://localhost:8001/docs](http://localhost:8001/docs)
+
+---
+
 ## 🐳 3. Hướng Dẫn Chạy Bằng Docker Compose (Cách 2)
 
 Nếu bạn đã cài đặt **Docker Desktop**, bạn có thể chạy toàn bộ môi trường (MySQL + Backend PHP + Database Seeds) chỉ bằng 1 lệnh:
